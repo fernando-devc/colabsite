@@ -12,7 +12,7 @@ export default function Home() {
       <div className="py-2 w-full container mx-auto px-5 lg:justify-start justify-center flex">
         <img src='/colablogo.png' alt="logo" className="lg:h-32 h-28" />
       </div>
-      {[...Array(200)].map((_, index) => (
+      {[Array(200)].map((_, index) => (
         <Star key={index} size={Math.floor(Math.random() * 1) + 1} />
       ))}
       <div className="flex-1 flex flex-col w-full ">
