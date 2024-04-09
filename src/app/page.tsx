@@ -13,7 +13,7 @@ export default function Home() {
         <img src='/colablogo.png' alt="logo" className="lg:h-32 h-28" />
       </div>
       {[... Array(200)].map((_, index) => (
-        <Star key={index} size={Math.floor(Math.random() * 1) + 1} />
+        <Star key={index} size={Math.floor(Math.random() * 2) + 1} />
       ))}
       <div className="flex-1 flex flex-col w-full ">
         <div className="flex-1 justify-center items-center flex">
