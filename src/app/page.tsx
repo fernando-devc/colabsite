@@ -8,7 +8,7 @@ const tilt = Tilt_Neon({
 
 export default function Home() {
   return (
-    <main className="h-screen w-screen bg-[#0000] flex items-center relative overflow-hidden flex-col">
+    <main className="h-screen w-screen bg-black flex items-center relative overflow-hidden flex-col">
       <div className="py-2 w-full container mx-auto px-5 lg:justify-start justify-center flex">
         <img src='/colablogo.png' alt="logo" className="lg:h-32 h-28" />
       </div>
