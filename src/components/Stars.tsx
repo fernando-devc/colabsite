@@ -19,8 +19,8 @@ const Star = ({ size }: any) => {
     }, []);
     return (
         <div
-            className={(`w-${size} h-${size}  ${animate ? 'animate-ping' : ' animate-pulse '} `) + ' bg-white rounded-full absolute  '}
-            style={{ left: position.x, top: position.y }}
+            className={(`${animate ? 'animate-ping' : ' animate-pulse '} `) + ' bg-white rounded-full absolute  '}
+            style={{ left: position.x, top: position.y , width:4,height: 4 }}
         />
     );
 };
