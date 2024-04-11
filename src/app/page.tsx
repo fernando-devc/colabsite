@@ -28,7 +28,7 @@ const Header = () => {
 export default function Home() {
   return (
     <div className="h-full  bg-black flex items-center  flex-col relative">
-      <div className=" h-screen bg-black overflow-hidden absolute z-0 w-full">
+      <div className=" h-screen top-0 bottom-0  overflow-hidden absolute z-0 w-full">
         {[...Array(200)].map((_, index) => (
           <Star key={index} size={Math.floor(Math.random() * 2) + 1} />
         ))}

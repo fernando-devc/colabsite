@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/react'
 import localFont from 'next/font/local'
 import React from 'react'
 
@@ -7,7 +8,7 @@ const FontInter = localFont({ src: '../fonts/Inter.woff2' })
 export default function HeroPageRocket() {
     return (
         <>
-            <div className='h-full w-full flex items-center  relative flex-col justify-between bg-black '>
+            <div className='h-full w-full flex items-center  relative flex-col justify-between '>
                 <img src='/Moon.svg' className='absolute md:top-5 lg:top-5 -top-5 right-5 md:right-28 lg:right-28 md:h-28 lg:h-28 h-16' />
                 <div className='flex flex-col justify-center text-center pt-10 z-10 px-5 items-center flex-1 lg:mb-0 -mb-10 '>
                     <h1 className={(FontArista.className) + ' text-white text-[25px] md:text-[65px] lg:text-[65px] leading-none'}>
@@ -20,9 +21,11 @@ export default function HeroPageRocket() {
                         Sistemas personalizados para otimizar seus processos e alcançar seus objetivos.
                     </h1>
                     <div className='py-2 lg:py-8 md:py-8 z-10'>
-                        <button className={(FontArista.className) + ' text-white text-md lg:text-2xl px-10 py-2 bg-green-500 mt-5 rounded-lg hover:'} >
-                            Faça seu Orçamento
-                        </button>
+                        <Button className={(FontArista.className)} variant='solid' color='success' size='lg' >
+                            <p className='text-xl text-white'>
+                                Faça seu Orçamento
+                            </p>
+                        </Button>
                     </div>
                 </div>
                 <div className='z-10 lg:relative md:relative bottom-0'>
