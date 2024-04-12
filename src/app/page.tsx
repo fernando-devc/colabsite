@@ -6,33 +6,42 @@ import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import localFont from 'next/font/local'
+import { useEffect, useState } from "react";
 
 const FontArista = localFont({ src: '../components/fonts/Arista-Pro-Regular-trial.woff2' })
 
 
 const Header = () => {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   return (
     <header className="py-2 w-full  mx-auto px-5 lg:justify-start justify-center flex z-10 ">
       <nav className="flex container mx-auto items-center">
         <div>
           {
-            theme === 'dark' ?
-              <img src='/logo-dark-horizontar.png' alt="logo" className="lg:h-32 h-24 " />
+            theme !== 'dark' ?
+              <img src='/logo-light-horizontar.png' alt="logo" className="lg:h-32 h-24  " />
               :
-              <img src='/logo-light-horizontar.png' alt="logo" className="lg:h-32 h-24 " />
+              <img src='/logo-dark-horizontar.png' alt="logo" className="lg:h-32 h-24  " />
           }
         </div>
         <div className="flex-1" />
         <div className="md:flex lg:flex hidden gap-5 items-center">
-          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Sobre</Button>
-          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Blog</Button>
-          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Portfolio</Button>
-          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Contato</Button>
+          <Button href="#" color='success' variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Sobre</Button>
+          <Button href="#" color='success' variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Blog</Button>
+          <Button href="#" color='success' variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Portfolio</Button>
+          <Button href="#" color='success' variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Contato</Button>
         </div>
-        <div>
+        <div className="flex gap-5 items-center ml-5">
           <ThemeSwitcher />
-          <Button href="#" variant="light" startContent={<Bars3Icon className="h-6 w-6"/>} isIconOnly />
+          <Button href="#" variant="light" startContent={<Bars3Icon className="h-6 w-6" />} isIconOnly />
         </div>
 
       </nav>
