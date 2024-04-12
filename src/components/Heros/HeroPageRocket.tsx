@@ -11,18 +11,18 @@ export default function HeroPageRocket() {
             <div className='h-full w-full flex items-center  relative flex-col justify-between '>
                 <img src='/Moon.svg' className='absolute md:top-5 lg:top-5 -top-5 right-5 md:right-28 lg:right-28 md:h-28 lg:h-28 h-16' />
                 <div className='flex flex-col justify-center text-center pt-10 z-10 px-5 items-center flex-1 lg:mb-0 -mb-10 '>
-                    <h1 className={(FontArista.className) + ' text-white text-[25px] md:text-[65px] lg:text-[65px] leading-none'}>
+                    <h1 className={(FontArista.className) + ' dark:text-white text-[25px] md:text-[65px] lg:text-[65px] leading-none'}>
                         Soluções em software.
                     </h1>
-                    <h1 className={(FontArista.className) + ' text-white text-[25px] md:text-[65px] lg:text-[65px] leading-none '}>
+                    <h1 className={(FontArista.className) + ' dark:text-white text-[25px] md:text-[65px] lg:text-[65px] leading-none '}>
                         Que impulsionam o seu <span className='text-green-500'>negócio</span>
                     </h1>
-                    <h1 className={(FontInter.className) + ' text-white text-[14px] lg:text-[20px] md:text-[20px] leading-none '}>
+                    <h1 className={(FontInter.className) + ' dark:text-white text-[14px] lg:text-[20px] md:text-[20px] leading-none '}>
                         Sistemas personalizados para otimizar seus processos e alcançar seus objetivos.
                     </h1>
-                    <div className='py-2 lg:py-8 md:py-8 z-10'>
-                        <Button className={(FontArista.className)} variant='solid' color='success' size='lg' >
-                            <p className='text-xl text-white'>
+                    <div className='py-5 lg:py-8 md:py-8 z-10'>
+                        <Button className={(FontInter.className)} variant='solid' color='success' size='lg' >
+                            <p className='text-md md:text-xl dark:text-white'>
                                 Faça seu Orçamento
                             </p>
                         </Button>

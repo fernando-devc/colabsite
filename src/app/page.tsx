@@ -1,25 +1,40 @@
 'use client'
 import HeroPageRocket from "@/components/Heros/HeroPageRocket";
 import Star from "@/components/Stars";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { Bars3Icon } from "@heroicons/react/24/outline";
+import { Button } from "@nextui-org/react";
+import { useTheme } from "next-themes";
 import localFont from 'next/font/local'
 
 const FontArista = localFont({ src: '../components/fonts/Arista-Pro-Regular-trial.woff2' })
-const FontInter = localFont({ src: '../components/fonts/Inter.woff2' })
+
 
 const Header = () => {
+  const { theme, setTheme } = useTheme()
   return (
     <header className="py-2 w-full  mx-auto px-5 lg:justify-start justify-center flex z-10 ">
       <nav className="flex container mx-auto items-center">
         <div>
-          <img src='/logo-dark-horizontar.png' alt="logo" className="lg:h-32 h-24" />
+          {
+            theme === 'dark' ?
+              <img src='/logo-dark-horizontar.png' alt="logo" className="lg:h-32 h-24 " />
+              :
+              <img src='/logo-light-horizontar.png' alt="logo" className="lg:h-32 h-24 " />
+          }
         </div>
-        <div className="flex-1"/>
-        <div className="md:flex lg:flex hidden gap-5 ">
-          <a href="#" className={(FontArista.className)+" text-white hover:text-green-500 text-xl"}>Sobre</a>
-          <a href="#" className={(FontArista.className)+" text-white hover:text-green-500 text-xl"}>Blog</a>
-          <a href="#" className={(FontArista.className)+" text-white hover:text-green-500 text-xl"}>Portfolio</a>
-          <a href="#" className={(FontArista.className)+" text-white hover:text-green-500 text-xl"}>Contato</a>
+        <div className="flex-1" />
+        <div className="md:flex lg:flex hidden gap-5 items-center">
+          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Sobre</Button>
+          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Blog</Button>
+          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Portfolio</Button>
+          <Button href="#" variant="light" className={(FontArista.className) + " dark:text-white hover:text-green-500 text-xl"}>Contato</Button>
         </div>
+        <div>
+          <ThemeSwitcher />
+          <Button href="#" variant="light" startContent={<Bars3Icon className="h-6 w-6"/>} isIconOnly />
+        </div>
+
       </nav>
     </header>
   )
@@ -27,7 +42,7 @@ const Header = () => {
 
 export default function Home() {
   return (
-    <div className="h-full  bg-black flex items-center  flex-col relative">
+    <div className="h-full  dark:bg-black bg-white flex items-center  flex-col relative">
       <div className=" h-screen top-0 bottom-0  overflow-hidden absolute z-0 w-full">
         {[...Array(200)].map((_, index) => (
           <Star key={index} size={Math.floor(Math.random() * 2) + 1} />
@@ -35,7 +50,7 @@ export default function Home() {
       </div>
       <Header />
       <main className="z-10 w-full h-full flex justify-start items-start flex-col">
-        <HeroPageRocket/>
+        <HeroPageRocket />
         <section className="w-full bg-green-500 h-96">
 
         </section>
